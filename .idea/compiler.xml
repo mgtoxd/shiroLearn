@@ -6,11 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="2-shiro-ssm" />
         <module name="1-shiro" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="1-shiro" target="11" />
+      <module name="2-shiro-ssm" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
