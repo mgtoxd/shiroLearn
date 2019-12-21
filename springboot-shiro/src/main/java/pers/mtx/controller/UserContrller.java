@@ -23,4 +23,26 @@ public class UserContrller {
 //        返回到test.html
         return "test";
     }
+    @RequestMapping("/add")
+    public String add(Model model){
+//        数据存入
+        model.addAttribute("name","mtx");
+//        返回到test.html
+        return "/user/add";
+    }
+    @RequestMapping("/update")
+    public String update(Model model){
+//        数据存入
+        model.addAttribute("name","mtx");
+//        返回到test.html
+        return "/user/update";
+    }
+
+    @RequestMapping("/tologin")
+    public String tologin(Model model){
+//        数据存入
+        model.addAttribute("name","mtx");
+//        返回到test.html
+        return "login";
+    }
 }
