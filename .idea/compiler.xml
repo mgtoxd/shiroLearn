@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="springboot-shiro" />
         <module name="2-shiro-ssm" />
         <module name="1-shiro" />
       </profile>
@@ -13,6 +14,7 @@
     <bytecodeTargetLevel>
       <module name="1-shiro" target="11" />
       <module name="2-shiro-ssm" target="11" />
+      <module name="springboot-shiro" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

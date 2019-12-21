@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/1-shiro/1-shiro.iml" filepath="$PROJECT_DIR$/1-shiro/1-shiro.iml" />
       <module fileurl="file://$PROJECT_DIR$/2-shiro-ssm/2-shiro-ssm.iml" filepath="$PROJECT_DIR$/2-shiro-ssm/2-shiro-ssm.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/shiroLearn.iml" filepath="$PROJECT_DIR$/.idea/shiroLearn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-shiro/springboot-shiro.iml" filepath="$PROJECT_DIR$/springboot-shiro/springboot-shiro.iml" />
     </modules>
   </component>
 </project>

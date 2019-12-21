@@ -12,6 +12,7 @@
       <list>
         <option value="$PROJECT_DIR$/1-shiro/pom.xml" />
         <option value="$PROJECT_DIR$/2-shiro-ssm/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-shiro/pom.xml" />
       </list>
     </option>
   </component>
