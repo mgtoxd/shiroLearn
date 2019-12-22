@@ -41,6 +41,8 @@ public class shiroConfig {
 //        filterMap.put("/update","authc");
 
         filterMap.put("/testThymeleaf","anon");
+        //放行login
+        filterMap.put("/login","anon");
         filterMap.put("/*","authc");
 
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterMap);
