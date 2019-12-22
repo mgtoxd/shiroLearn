@@ -5,10 +5,12 @@ import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import pers.mtx.service.UserService;
 
 import java.security.Security;
 
@@ -52,11 +54,23 @@ public class UserContrller {
 //        返回到test.html
         return "login";
     }
+    @RequestMapping("/unAuth")
+    public String unAuth(Model model){
+//        数据存入
+        model.addAttribute("name","mtx");
+//        返回到test.html
+        return "unAuth";
+    }
+
+
+
+
     /*
     登录逻辑处理
      */
     @RequestMapping("/login")
     public String login(String name,String password,Model model){
+        System.out.println(name);
         System.out.println(password);
         /*
         使用shiro编写认证
@@ -66,6 +80,9 @@ public class UserContrller {
 
         //2.封装用户数据
         UsernamePasswordToken token = new UsernamePasswordToken(name,password);
+
+
+
 
         //3.执行登录方法
         try {

@@ -43,12 +43,17 @@ public class shiroConfig {
         filterMap.put("/testThymeleaf","anon");
         //放行login
         filterMap.put("/login","anon");
+
+//        授权过滤器
+        filterMap.put("/add","perms[user:add]");
         filterMap.put("/*","authc");
 
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterMap);
 
         //修改跳转页面
         shiroFilterFactoryBean.setLoginUrl("/tologin");
+        //设置未授权提示页面
+        shiroFilterFactoryBean.setUnauthorizedUrl("/unAuth");
 
         return shiroFilterFactoryBean;
     }
