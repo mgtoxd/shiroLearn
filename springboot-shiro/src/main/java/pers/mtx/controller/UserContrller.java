@@ -57,7 +57,7 @@ public class UserContrller {
      */
     @RequestMapping("/login")
     public String login(String name,String password,Model model){
-
+        System.out.println(password);
         /*
         使用shiro编写认证
         1.获取subject
