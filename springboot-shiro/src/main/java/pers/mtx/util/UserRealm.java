@@ -1,9 +1,12 @@
 package pers.mtx.util;
 
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
+import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import pers.mtx.domain.User;
 import pers.mtx.service.UserService;
@@ -18,7 +21,21 @@ public class UserRealm  extends AuthorizingRealm {
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         System.out.println("执行授权逻辑");
-        return null;
+        //给资源进行授权
+        SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
+
+        //添加资源的授权字符串
+//        info.addStringPermission("user:add");
+        Subject subject = SecurityUtils.getSubject();
+        System.out.println(subject.getPrincipal());
+        User user = (User)subject.getPrincipal();//获取当前登录用户的user
+        User dbuser = userService.findById(user.getId());
+
+        info.addStringPermission(dbuser.getPerms());
+
+
+
+        return info;
     }
 
     //注入业务
@@ -48,8 +65,8 @@ public class UserRealm  extends AuthorizingRealm {
             return null;//返回null shiro底层会抛出UnknownAccountException
         }
         //2.判断密码
-        return new SimpleAuthenticationInfo("",user.getPassword(),"");
-        //第一个参数,需要返回给login方法的一些数值
+        return new SimpleAuthenticationInfo(user,user.getPassword(),"");
+        //第一个参数,需要返回给login方法的一些数值,也是getPrincipal强转的类型
         //第二个参数,密码
         //第三个参数,shiro的名字,留空
     }

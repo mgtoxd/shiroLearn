@@ -12,5 +12,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM
 		user where name = #{value}
 	</select>
+
+	<select id="findById" parameterType="int" resultType="user">
+	SELECT 	id,
+		NAME,
+		PASSWORD,
+		perms
+		FROM
+		user where id = #{value}
+	</select>
 	
 </mapper>

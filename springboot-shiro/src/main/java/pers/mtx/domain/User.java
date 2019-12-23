@@ -4,6 +4,15 @@ public class User {
     private int id;
     private String name;
     private String password;
+    private String perms;
+
+    public String getPerms() {
+        return perms;
+    }
+
+    public void setPerms(String perms) {
+        this.perms = perms;
+    }
 
     public int getId() {
         return id;

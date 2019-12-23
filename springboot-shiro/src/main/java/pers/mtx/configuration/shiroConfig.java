@@ -46,6 +46,7 @@ public class shiroConfig {
 
 //        授权过滤器
         filterMap.put("/add","perms[user:add]");
+        filterMap.put("/update","perms[user:update]");
         filterMap.put("/*","authc");
 
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterMap);
