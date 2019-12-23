@@ -7,7 +7,12 @@
 <body>
 <h3 th:text="${name}"></h3>
 <br></br>
+<div shiro:hasPermission="user:add">
 用户添加:<a href="add">用户添加</a><br/>
+</div>
+<div shiro:hasPermission="user:update">
 用户更新:<a href="update">用户更新</a>
+</div>
+<a href="/tologin">登录</a>
 </body>
 </html>
