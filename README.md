@@ -1,7 +1,7 @@
 # shiroLearn
 开始学习shiro
 
-1. shiro核心api
+1. shiro核心api  
 
     Subject： 用户主体（把操作交给SecurityManager）
 
@@ -11,6 +11,7 @@
 
 2. 要导入shiro-spring整合依赖包
 3. 写Realm,其中包括shiro的逻辑,继承AuthorizingRealm类
+    
     * 
 3. 先写shiro配置类
     * 创建ShiroFilterFactoryBean
