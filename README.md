@@ -1,9 +1,9 @@
 # shiroLearn
 开始学习shiro
 
-1. shiro核心api  
+1. shiro核心api   
 
-    Subject： 用户主体（把操作交给SecurityManager）
+    Subject： 是用户主体（把操作交给SecurityManager）
 
     SecurityManager：安全管理器（关联Realm）
 
